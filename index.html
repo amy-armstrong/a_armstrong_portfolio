@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amy's Portfolio</title>
 </head>
 <body>
     <header>
         <h1 class="logo">AA</h1>
-
         <nav>
             <ul>
                 <li><a href="#home">DESIGNER & FRONT-END DEVELOPER</a></li>
@@ -18,64 +17,93 @@
             </ul>
         </nav>
     </header>
-
+    
     <main>
     <section class="hero">
         <h2 class="hero-banner">Amy Armstrong</h2>
         <p>DESIGNER & FRONT-END DEVELOPER</p>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
         <h2 class="about-me">HI, I'M AMY.</h2>
         <div>
-            <img>photo of me<img>
-            <p class="about-me">I’m a Filipino-Canadian designer and front-end developer based in London, Ontario, 
-            currently studying Interactive Media Design at Fanshawe College. With a background in graphic design,
-            I combine creativity and technical precision to craft engaging, user-focused digital experiences. 
-            My expertise spans UI/UX design, branding, and responsive design, supported by strong problem-solving,
-            adaptability, and collaboration skills.</p>
+            <img src="images/me.jpg" alt="Photo of Amy Armstrong">
+            <p class="about-me">
+                I’m a Filipino-Canadian designer and 
+                front-end developer based in London, Ontario, currently studying Interactive Media Design at 
+                Fanshawe College. With a background in graphic design, I combine creativity and technical precision
+                to craft engaging, user-focused digital experiences. My expertise spans UI/UX design, branding,
+                and responsive design, supported by strong problem-solving, adaptability, and collaboration skills.</p>
+
             <a href="about.html" class="more-link">More about me</a>
         </div>
-
     </section>
+
+    <section class="carousel">
+        <h2 class="hidden">Carousel</h2>
+        <div class="container">
+          <div class="slide">
+
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1074&auto=format&fit=crop');">
+              <div class="content">
+                <div class="name">Project 1</div>
+                <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate corporis maxime blanditiis obcaecati a, eveniet voluptates magni autem commodi neque assumenda placeat! Voluptate veritatis in, possimus rerum obcaecati ducimus dolor?</div>
+                <a class="seeMore" href="project.html">See More</a>
+              </div>
+            </div>
+
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1439792675105-701e6a4ab6f0?q=80&w=1173&auto=format&fit=crop');">
+              <div class="content">
+                <div class="name">Project 2</div>
+                <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur modi quod quasi repudiandae nam recusandae exercitationem quaerat molestias ea dignissimos voluptates nemo impedit dolores, quisquam rerum ullam fugiat autem tempore.</div>
+                <a class="seeMore" href="projects.html">See More</a>
+              </div>
+            </div>
+
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1483982258113-b72862e6cff6?q=80&w=1170&auto=format&fit=crop');">
+              <div class="content">
+                <div class="name">Project 3</div>
+                <div class="des">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus quam assumenda saepe alias doloremque reiciendis unde eaque aperiam eveniet, nobis enim sequi officiis accusantium tempore vitae dolorem similique quo. Modi.</div>
+                <a class="seeMore" href="projects.html">See More</a>
+              </div>
+            </div>
+          </div> 
+        </div> 
+    </section>
+
     <section id="prompts">
         <h2>LET'S CONNECT</h2>
         <div class="prompt-list">
-  
           <div class="prompt-card">
             <a href="mailto:youremail@example.com?subject=Let's%20collaborate%20on%20a%20UX%20design%20project!">
               <h3>UX/UI Design</h3>
               <p>Have a design challenge or concept idea? Let’s chat!</p>
             </a>
           </div>
-  
+
           <div class="prompt-card">
             <a href="mailto:youremail@example.com?subject=Graphic%20Design%20Inquiry">
               <h3>Graphic Design</h3>
               <p>Need branding, posters, or social media visuals?</p>
             </a>
           </div>
-  
+
           <div class="prompt-card">
             <a href="mailto:youremail@example.com?subject=Front-End%20Development%20Project">
               <h3>Front-End Development</h3>
               <p>Looking to build an interactive website or prototype?</p>
             </a>
           </div>
-  
+
           <div class="prompt-card">
             <a href="mailto:youremail@example.com?subject=Let's%20connect%20about%20creative%20collaboration">
               <h3>Creative Projects</h3>
               <p>Have a fun, experimental idea? I’d love to hear about it.</p>
             </a>
           </div>
-  
         </div>
+    </section>
 
-        <div class="about-link">
-            <a href="about">ABOUT ME →</a>
-          </div>
-      </section>
     </main>
 
     <footer>
@@ -91,7 +119,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-              </ul>
+            </ul>
         </div>
 
         <div class="footer-social">
@@ -104,7 +132,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 AMY ARMSTRONG </p>
+            <p>© 2025 AMY ARMSTRONG</p>
         </div>
     </footer>
 </body>
