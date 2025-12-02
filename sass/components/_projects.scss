@@ -1,7 +1,3 @@
-@forward 'home';
-@forward 'contact';
-@forward 'projects';
-
 @use "../abstracts" as abs;
 
 .projects {
@@ -58,13 +54,6 @@
           opacity: 0.85;
         }
       }
-    }
-  }
-
-  // Optional responsive tweak
-  @include abs.respond(md) {
-    .project-list {
-      grid-template-columns: 1fr 1fr; // 2 per row on tablet
     }
   }
 }
