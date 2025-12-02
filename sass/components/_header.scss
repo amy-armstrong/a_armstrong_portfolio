@@ -1,0 +1,39 @@
+@use "../abstracts" as abs;
+
+header {
+  @include abs.flex(row, space-between, center);
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  background: abs.$color-white;
+  border-bottom: 1px solid abs.$color-light-gray;
+  z-index: 10;
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-family: abs.$font-secondary;
+  }
+
+  nav ul {
+    @include abs.flex(row, flex-start, center, 35px);
+    list-style: none;
+
+    li a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0.8;
+      @include abs.transition(opacity,0.2s);
+
+      &:hover { opacity: 1; }
+    }
+  }
+}
+
+@include abs.respond(md) {
+  header { flex-direction: column; gap: 15px; }
+}
+
+  
+  
