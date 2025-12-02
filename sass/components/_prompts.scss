@@ -9,13 +9,19 @@
   h2 { font-family: abs.$font-secondary; font-size: 2.2rem; margin-bottom: 50px; }
 
   .prompt-list {
-    @include abs.grid(repeat(auto-fit,minmax(240px,1fr)),25px);
+    // Default for desktop: 2 columns
+    @include abs.grid(2fr 2fr, 25px);
+
+    // Tablet and smaller: auto-fit
+    @include abs.respond(md) {
+      @include abs.grid(repeat(auto-fit, minmax(240px, 1fr)), 25px);
+    }
 
     .prompt-card {
       padding: 25px;
       border: 1px solid #eee;
       @include abs.rounded(14px);
-      @include abs.transition(all,0.25s);
+      @include abs.transition(all, 0.25s);
 
       &:hover { transform: translateY(-5px); border-color: #ccc; }
 
@@ -24,6 +30,7 @@
     }
   }
 }
+
 
   
   

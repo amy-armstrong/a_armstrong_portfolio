@@ -1,7 +1,6 @@
 @use "../abstracts" as abs;
 
 .hero {
-  height: 80vh;
   padding: 0 40px;
   @include abs.flex(column, flex-start, center);
 
@@ -20,6 +19,24 @@
 
   @include abs.respond(md) {
     .hero-banner { font-size: 2.8rem; }
+  }
+
+  .video-player {
+    width: 100vh;
+    max-width: 1000px;
+    margin: 40px auto 0;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+    video {
+      width: 100%;
+      border-radius: inherit;
+      outline: none;
+    }
+
+    @include abs.respond(md) {
+      width: 90%;
+    }
   }
 }
 
