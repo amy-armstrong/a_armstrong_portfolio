@@ -1,0 +1,67 @@
+@use "../abstracts" as abs;
+
+.project-detail {
+  padding: 80px 40px;
+  max-width: 1100px;
+  margin: auto;
+
+  .project-title {
+    font-family: abs.$font-secondary;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .project-main-image {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 40px;
+    object-fit: cover;
+  }
+
+  section {
+    margin-bottom: 50px;
+
+    h3 {
+      font-family: abs.$font-secondary;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-family: abs.$font-primary;
+      font-size: 1rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+  }
+
+  .project-info {
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+
+      .info-item {
+        background: #fafafa;
+        padding: 20px;
+        border-radius: 14px;
+        font-family: abs.$font-primary;
+        font-size: 0.95rem;
+        strong { font-weight: 600; }
+      }
+    }
+  }
+
+  @include abs.respond(md) {
+    padding: 60px 20px;
+
+    .project-title { font-size: 2rem; }
+
+    .project-info {
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
