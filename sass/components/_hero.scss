@@ -1,0 +1,26 @@
+@use "../abstracts" as abs;
+
+.hero {
+  height: 80vh;
+  padding: 0 40px;
+  @include abs.flex(column, flex-start, center);
+
+  .hero-banner {
+    font-family: abs.$font-secondary;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+  }
+
+  p {
+    font-family: abs.$font-primary;
+    font-size: 1.2rem;
+    opacity: 0.7;
+  }
+
+  @include abs.respond(md) {
+    .hero-banner { font-size: 2.8rem; }
+  }
+}
+
+  

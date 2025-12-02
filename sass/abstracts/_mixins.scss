@@ -1,0 +1,35 @@
+// change as needed
+
+// FLEX, GRID, TRANSITION, ROUNDED, MEDIA
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+  }
+  
+  @mixin grid($cols: 1fr, $gap: 0, $align: stretch, $justify: stretch) {
+    display: grid;
+    grid-template-columns: $cols;
+    gap: $gap;
+    align-items: $align;
+    justify-items: $justify;
+  }
+  
+  @mixin transition($properties: all, $duration: 0.3s, $ease: ease) {
+    transition: $properties $duration $ease;
+  }
+  
+  @mixin rounded($radius: 12px) {
+    border-radius: $radius;
+  }
+  
+  @mixin respond($breakpoint) {
+    @if $breakpoint == md {
+      @media (max-width: 850px) { @content; }
+    }
+  }
+  
+  
+  
