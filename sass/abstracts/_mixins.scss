@@ -1,37 +1,35 @@
 // change as needed
 
-// Mixins
-
-@mixin rotated($radius) {
-    -webkit-transform: rotate($radius);
-    -ms-transform: rotate($radius);
-    transform: rotate($radius);
-  }
-  
-  // Flex box mixins
-  
-  @mixin flex-column {
+// FLEX, GRID, TRANSITION, ROUNDED, MEDIA
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
     display: flex;
-    flex-direction: column;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
   }
   
-  @mixin flex-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  @mixin grid($cols: 1fr, $gap: 0, $align: stretch, $justify: stretch) {
+    display: grid;
+    grid-template-columns: $cols;
+    gap: $gap;
+    align-items: $align;
+    justify-items: $justify;
   }
   
-  @mixin flex-center-column {
-    @include flex-center;
-    flex-direction: column;
+  @mixin transition($properties: all, $duration: 0.3s, $ease: ease) {
+    transition: $properties $duration $ease;
   }
   
-  @mixin flex-center-vert {
-    display: flex;
-    align-items: center;
+  @mixin rounded($radius: 12px) {
+    border-radius: $radius;
   }
   
-  @mixin flex-center-horiz {
-    display: flex;
-    justify-content: center;
+  @mixin respond($breakpoint) {
+    @if $breakpoint == md {
+      @media (max-width: 850px) { @content; }
+    }
   }
+  
+  
+  
