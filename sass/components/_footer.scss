@@ -1,0 +1,21 @@
+@use "../abstracts" as abs;
+
+footer {
+  margin-top: 100px;
+  padding: 60px 40px;
+  background: abs.$color-bg-footer;
+  @include abs.grid(repeat(auto-fit,minmax(220px,1fr)),40px);
+
+  .footer-nav ul, .footer-social ul { list-style: none; li { margin-bottom: 10px; } }
+
+  .footer-bottom {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+}
+
+  
+  
