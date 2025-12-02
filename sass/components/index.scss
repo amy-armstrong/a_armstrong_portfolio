@@ -1,1 +1,8 @@
 // Import variables from the main variables partial
+
+// As we add components:
+@forward "header";
+@forward "carousel";
+@forward "footer";
+@forward "cards";
+@forward "hero";
