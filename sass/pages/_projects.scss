@@ -19,11 +19,19 @@
   .project-list {
     @include abs.grid(repeat(auto-fit, minmax(280px, 1fr)), 25px);
 
-    .project-card {
-      border: 1px solid #eee;
-      @include abs.rounded(14px);
-      @include abs.transition(all, 0.25s);
-      overflow: hidden;
+    .project-card { 
+      background: #fff; 
+      padding: 20px; 
+      border-radius: 12px; 
+      text-align: left; 
+
+    .view-more { 
+      display: inline-block; 
+      margin-top: 12px; 
+      font-weight: 600; 
+      color: #2b68ff; 
+      text-decoration: underline; 
+    } 
 
       a {
         display: block;
