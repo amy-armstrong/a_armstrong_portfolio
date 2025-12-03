@@ -1,17 +1,15 @@
 @use "../abstracts" as abs;
 
 .project-detail {
-  max-width: 750px;          // WIREFRAME: Narrow column layout
+  max-width: 750px;          
   margin: 120px auto;
   padding: 0 30px;
   text-align: left;
 }
 
-/* ------------------------------
-   TITLE + HEADER IMAGE
-------------------------------- */
+
 .project-title {
-  font-family: abs.$font-secondary;   // Serif if you're using it for headers
+  font-family: abs.$font-secondary;  
   font-size: 2.8rem;
   font-weight: 600;
   text-align: center;
@@ -20,17 +18,15 @@
 
 .project-main-image {
   width: 100%;
-  height: 260px;             // matches the rectangle in your Figma
-  background: #f3f3f3;       // placeholder grey block
+  height: 260px;             
+  background: #f3f3f3;       //placeholder for image
   border-radius: 12px;
   display: block;
   margin: 0 auto 60px auto;
   object-fit: cover;
 }
 
-/* ------------------------------
-   SECTION HEADINGS
-------------------------------- */
+
 .project-detail h3 {
   font-family: abs.$font-secondary;
   font-size: 1.4rem;
@@ -39,9 +35,7 @@
   margin-bottom: 12px;
 }
 
-/* ------------------------------
-   SECTION PARAGRAPHS
-------------------------------- */
+
 .project-detail p {
   font-family: abs.$font-primary;
   line-height: 1.7;
@@ -49,10 +43,7 @@
   margin-bottom: 35px;
 }
 
-/* ------------------------------
-   INFO GRID (TIMEFRAME, ROLE, TOOLS)
-   Styled like 3 columns in your wireframe
-------------------------------- */
+
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -79,9 +70,7 @@
   }
 }
 
-/* ------------------------------
-   RESPONSIVE FOR MOBILE
-------------------------------- */
+
 @media (max-width: 768px) {
   .project-detail {
     max-width: 95%;
