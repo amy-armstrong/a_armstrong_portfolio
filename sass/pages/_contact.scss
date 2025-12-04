@@ -150,12 +150,19 @@
 
 
 @media (max-width: 768px) {
-  .blob-bg {
-    width: 260px;
+    .contact-intro .intro-card {
+      padding: 35px 30px;
+    }
+  
+    .blob-bg {
+      width: 260px;
+    }
+  
+    .contact-form-area .row {
+      grid-template-columns: 1fr;
+    }
+  
+    .placeholder-inputs {
+      grid-template-columns: 1fr !important;
+    }
   }
-
-  .contact-intro .intro-card {
-    padding: 35px 30px;
-  }
-
-  .contact-form-area .row
