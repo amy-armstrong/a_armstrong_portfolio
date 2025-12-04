@@ -10,15 +10,28 @@
 <body>
     <header>
         <h1 class="logo">AA</h1>
-        <nav>
+        <nav class="desktop-nav">
             <ul>
-                <li><a href="index.html">DESIGNER & FRONT-END DEVELOPER</a></li>
+                <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
+        <button id="hamburger">&#9776;</button>
     </header>
+    
+    <div id="menu" class="overlay">
+        <button id="close">&times;</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
 
 <main class="contact-page">
   <section class="contact-intro">
@@ -51,7 +64,7 @@
   <section class="contact-form-area">
     <h3>SOMETHING MORE SPECIFIC? LEAVE A MESSAGE AND I’LL GET BACK TO YOU SOON.</h3>
 
-    <form class="contact-form">
+    <form class="contact-form" action="thank-you.html" method="POST">
 
       <div class="row">
         <div class="form-group">
@@ -110,6 +123,7 @@
         <p>© 2025 AMY ARMSTRONG</p>
     </div>
 </footer>
+<script src="js/main.js"></script>
 
 </body>
 </html>
