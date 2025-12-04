@@ -1,0 +1,169 @@
+/* ------------------------------
+   About Me Section
+------------------------------ */
+.about-me {
+    padding: 60px 20px;
+    background: #ffffff;
+  
+    .section-title {
+      text-align: left;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+  
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+  
+      .about-text {
+        flex: 1;
+        min-width: 280px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #333;
+      }
+  
+      .about-image {
+        flex: 1;
+        min-width: 220px;
+        text-align: center;
+  
+        img {
+          max-width: 100%;
+          border-radius: 50%;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          transition: transform 0.3s ease;
+  
+          &:hover {
+            transform: scale(1.03);
+          }
+        }
+      }
+    }
+  
+    .skills-lists {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+  
+      .skills-list {
+        flex: 1;
+        min-width: 200px;
+  
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 12px;
+          color: #000000;
+        }
+  
+        ul {
+          list-style: disc;
+          padding-left: 20px;
+  
+          li {
+            margin-bottom: 6px;
+            font-size: 1rem;
+            color: #555;
+          }
+        }
+      }
+    }
+  }
+  
+  /* ------------------------------
+     Prompts Section
+  ------------------------------ */
+  #prompts {
+    padding: 60px 20px;
+    background: #f9f9f9;
+  
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #000000;
+    }
+  
+    .prompt-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+  
+    .prompt-card {
+      background: #fff;
+      flex: 1 1 220px; /* responsive width */
+      max-width: 280px;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+  
+        h3 {
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+          color: #000000;
+        }
+  
+        p {
+          font-size: 1rem;
+          color: #555;
+        }
+      }
+  
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      }
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .about-me {
+      .about-content {
+        flex-direction: column-reverse;
+        text-align: center;
+  
+        .about-text {
+          margin-top: 20px;
+        }
+      }
+  
+      .skills-lists {
+        flex-direction: column;
+        align-items: center;
+  
+        .skills-list {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+      }
+    }
+  
+    #prompts {
+      .prompt-list {
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      .prompt-card {
+        max-width: 90%;
+      }
+    }
+  }
+  
+  
+  
