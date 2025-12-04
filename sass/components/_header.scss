@@ -98,11 +98,7 @@ header {
   }
 }
 
-/* ------------------------------------------------
-   MOBILE BEHAVIOR
---------------------------------------------------- */
 @media (max-width: 768px) {
-
   /* hide desktop nav */
   header .desktop-nav {
     display: none;
@@ -111,12 +107,16 @@ header {
   /* show hamburger */
   header #hamburger {
     display: block;
+    margin-left: auto;   
   }
 
   header {
     padding: 20px;
+    display: flex;
+    justify-content: space-between; 
   }
 }
+
 
 
 
