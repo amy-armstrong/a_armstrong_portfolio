@@ -7,43 +7,61 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
-        <h1 class="logo">AA</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">DESIGNER & FRONT-END DEVELOPER</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1 class="logo">AA</h1>
+    <nav class="desktop-nav">
+        <ul>
+            <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="hamburger">&#9776;</button>
+</header>
+
+<div id="menu" class="overlay">
+    <button id="close">&times;</button>
+    <nav>
+        <ul>
+            <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
     
     <main>
-        <section class="projects">
-            <h2 class="project-id">Projects</h2>
-        
-                <div class="project-card">
-                    <h3 class="project-name">Project 1</h3>
-                    <img src="images/project-1.png" alt="Project 1 Title">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus earum id consequatur rerum reiciendis voluptatem veniam officia! Eum est ducimus repudiandae perferendis temporibus necessitatibus? Dolorum quas expedita ipsa excepturi repellendus!</p>
-                    <a href="project-1.html" class="view-more">View More</a>
-                </div>
-        
-                <div class="project-card">
-                    <h3 class="project-name">Project 2</h3>
-                    <img src="images/project-2.png" alt="Project 2 Title">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, sed repudiandae unde iusto corrupti nesciunt natus, sapiente voluptatem quae ullam sunt, saepe tempora qui! Debitis officia perspiciatis cumque obcaecati eligendi.</p>
-                    <a href="project-2.html" class="view-more">View More</a>
-                </div>
-        
-                <div class="project-card">
-                    <h3 class="project-name">Project 3</h3>
-                    <img src="images/project-3.png" alt="Project 3 Title">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, sed repudiandae unde iusto corrupti nesciunt natus, sapiente voluptatem quae ullam sunt, saepe tempora qui! Debitis officia perspiciatis cumque obcaecati eligendi.</p>
-                    <a href="project-3.html" class="view-more">View More</a>
-                </div>
-        </section>
+      <section class="projects">
+        <h2 class="project-id">PROJECTS</h2>
+    
+        <div class="project-list">
+
+          <div class="project-card">
+              <img src="images/project-1.png" alt="Project 1 Title">
+              <h3 class="project-name">PROJECT 1</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+              <a href="project.html?id=project1" class="view-more">View More</a>
+          </div>
+      
+          <div class="project-card">
+              <img src="images/project-2.png" alt="Project 2 Title">
+              <h3 class="project-name">PROJECT 2</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+              <a href="project.html?id=project2" class="view-more">View More</a>
+          </div>
+      
+          <div class="project-card">
+              <img src="images/project-3.png" alt="Project 3 Title">
+              <h3 class="project-name">PROJECT 3</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+              <a href="project.html?id=project3" class="view-more">View More</a>
+          </div>
+      </div>     
+    </section>
+    
+      
 
     <section id="prompts">
         <h2>LET'S CONNECT</h2>
@@ -108,5 +126,6 @@
             <p>© 2025 AMY ARMSTRONG</p>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

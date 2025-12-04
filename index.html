@@ -7,17 +7,30 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
-        <h1 class="logo">AA</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">DESIGNER & FRONT-END DEVELOPER</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1 class="logo">AA</h1>
+    <nav class="desktop-nav">
+        <ul>
+            <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="hamburger">&#9776;</button>
+</header>
+
+<div id="menu" class="overlay">
+    <button id="close">&times;</button>
+    <nav>
+        <ul>
+            <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
     
     <main>
     <section class="hero">
@@ -57,7 +70,7 @@
               <div class="content">
                 <div class="name">Project 1</div>
                 <div class="des">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate corporis maxime blanditiis obcaecati a, eveniet voluptates magni autem commodi neque assumenda placeat! Voluptate veritatis in, possimus rerum obcaecati ducimus dolor?</div>
-                <a class="seeMore" href="project.html">See More</a>
+                <a class="seeMore" href="projects.html">See More</a>
               </div>
             </div>
 
@@ -144,5 +157,6 @@
             <p>© 2025 AMY ARMSTRONG</p>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
