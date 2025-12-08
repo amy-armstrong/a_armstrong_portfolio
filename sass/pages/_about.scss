@@ -7,8 +7,9 @@
   
     .section-title {
       text-align: left;
-      font-size: 2rem;
+      font-size: 50px;
       margin-bottom: 40px;
+      padding-top: 50px;
       color: #000000;
     }
   
@@ -47,14 +48,16 @@
   
     .skills-lists {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
       margin-bottom: 40px;
+      padding-left: 60px;
   
       .skills-list {
         flex: 1;
         min-width: 200px;
+
   
         h3 {
           font-size: 1.2rem;
