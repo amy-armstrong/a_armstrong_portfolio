@@ -1,12 +1,10 @@
 @use "../abstracts" as abs;
 
-/* ------------------------------------------------
-   HEADER — DESKTOP
---------------------------------------------------- */
+
 header {
   @include abs.flex(row, space-between, center);
   padding: 20px 40px;
-  background: white;
+  background: rgb(222, 180, 220);
   border-bottom: 1px solid abs.$color-light-gray;
   position: sticky;
   top: 0;
@@ -17,7 +15,7 @@ header {
     font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: -1px;
-    color: black;
+    color: rgb(255, 255, 255);
   }
 
   /* Desktop Navigation */
@@ -29,7 +27,7 @@ header {
       font-size: 0.95rem;
       font-weight: 500;
       opacity: 0.85;
-      color: black;
+      color: rgb(251, 251, 251);
       @include abs.transition(opacity, 0.2s);
 
       &:hover {
@@ -45,13 +43,11 @@ header {
     background: none;
     border: none;
     cursor: pointer;
-    color: black;
+    color: rgb(255, 255, 255);
   }
 }
 
-/* ------------------------------------------------
-   MOBILE FULLSCREEN OVERLAY
---------------------------------------------------- */
+
 .overlay {
   display: none;
   position: fixed;

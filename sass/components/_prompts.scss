@@ -9,10 +9,10 @@
   h2 { font-family: abs.$font-secondary; font-size: 2.2rem; margin-bottom: 50px; }
 
   .prompt-list {
-    // Default for desktop: 2 columns
+   //desk
     @include abs.grid(2fr 2fr, 25px);
 
-    // Tablet and smaller: auto-fit
+    // Tablet and smaller
     @include abs.respond(md) {
       @include abs.grid(repeat(auto-fit, minmax(240px, 1fr)), 25px);
     }
