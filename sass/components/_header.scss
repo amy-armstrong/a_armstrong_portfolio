@@ -19,7 +19,6 @@ header {
     
   }
 
-  /* Desktop Navigation */
   .desktop-nav ul {
     @include abs.flex(row, flex-start, center, 35px);
     list-style: none;
@@ -37,7 +36,6 @@ header {
     }
   }
 
-  /* Hide hamburger by default */
   #hamburger {
     display: none;
     font-size: 32px;
@@ -96,12 +94,10 @@ header {
 }
 
 @media (max-width: 768px) {
-  /* hide desktop nav */
   header .desktop-nav {
     display: none;
   }
 
-  /* show hamburger */
   header #hamburger {
     display: block;
     margin-left: auto;   
