@@ -1,16 +1,32 @@
-@use "../abstracts" as abs;
-
 footer {
   margin-top: 100px;
-  padding: 60px 40px;
+  padding: 40px 40px;
   background: rgb(222, 180, 220);
-  @include abs.grid(repeat(auto-fit,minmax(220px,1fr)),40px);
+  width: 100%;
 
-  .footer-nav ul, .footer-social ul { 
-  list-style: none; 
-  color: white;
-  
-  li { margin-bottom: 10px; } }
+
+  .footer-logo {
+    text-align: left; 
+    img {
+      max-width: 80px; 
+      height: auto;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      display: none; 
+    }
+  }
+
+  .footer-nav ul, 
+  .footer-social ul { 
+    list-style: none; 
+    color: white;
+    text-align: right;
+    
+    li { margin-bottom: 10px; } 
+  }
 
   .footer-bottom {
     grid-column: 1 / -1;
@@ -21,6 +37,7 @@ footer {
     color: white;
   }
 }
+
 
   
   
