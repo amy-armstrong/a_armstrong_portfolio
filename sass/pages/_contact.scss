@@ -28,7 +28,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 110%;        // slightly bigger than card
+        width: 110%;        
         transform: translate(-50%, -50%);
         opacity: 1;
         z-index: 1;         // behind the text
@@ -37,8 +37,6 @@
     }
   }
   
-
-
 
 .contact-form-area {
   max-width: 800px;
