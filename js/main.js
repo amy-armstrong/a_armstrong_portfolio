@@ -26,7 +26,7 @@
     }
   }
 
-  // show one project id at a time depending what is clicked 
+  // this show one project id at a time depending what is clicked 
   function showProject(id) {
     if (id && projects[id]) {
       var p = document.querySelector(projects[id]);
