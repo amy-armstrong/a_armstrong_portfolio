@@ -4,9 +4,9 @@ function getConfig()
 {
     return [
         'username' => 'root',
-        'password' => '', // 'root'
+        'password' => 'root', // 'root'
         'host' => 'localhost',
-        'database' => 'portfolio',
+        'database' => 'woqsxje7_portfolio',
         'port' => '3306' // OSX: 8889
     ];
 }
