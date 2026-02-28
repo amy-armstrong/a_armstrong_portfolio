@@ -1,4 +1,6 @@
 <?php
+require_once 'includes/database.php';
+$connection = getConnection(); 
 // Error reporting (turn off on production)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -37,6 +39,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
         $headers .= "X-Mailer: PHP/" . phpversion();
+
+            // Save contact submission to database using PDO
+        $stmt = $connection->prepare(
+        'INSERT INTO contacts 
+        (first_name, last_name, email, message) 
+        VALUES (:first_name, :last_name, :email, :message)'
+      );
+  
+    $stmt->bindParam(':first_name', $first);
+    $stmt->bindParam(':last_name', $last);
+    $stmt->bindParam(':email', $visitor_email);
+    $stmt->bindParam(':message', $message);
+    $stmt->execute();
 
         // Send email
         if (mail($recipient, $subject, $emailBody, $headers)) {
