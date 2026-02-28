@@ -6,6 +6,7 @@ $projectId = $_GET['id'] ?? null;
 $stmt = $connection->prepare("SELECT * FROM projects WHERE id = ? AND is_deleted = 0");
 $stmt->execute([$projectId]);
 $project = $stmt->fetch(PDO::FETCH_ASSOC);
+echo "<pre>"; var_dump($project); echo "</pre>";
 ?> 
 
 <!DOCTYPE html>
