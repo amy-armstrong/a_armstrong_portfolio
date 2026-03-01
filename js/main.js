@@ -10,7 +10,6 @@
   };
   const allProjects = document.querySelectorAll(".project-detail");
 
-  // my hamburger
   function openMenu() {
     menu.classList.add("open");
   }
@@ -19,26 +18,6 @@
     menu.classList.remove("open");
   }
 
-  // this hides all of my projects
-  function hideAllProjects() {
-    for (var i = 0; i < allProjects.length; i++) {
-      allProjects[i].style.display = "none";
-    }
-  }
-
-  // this show one project id at a time depending what is clicked 
-  function showProject(id) {
-    if (id && projects[id]) {
-      var p = document.querySelector(projects[id]);
-      if (p) {
-        p.style.display = "block";
-      }
-    } else {
-      console.log("No valid project selected");
-    }
-  }
-
-  // grabs the id from the url
   function getProjectId() {
     var query = window.location.search; 
     var idStart = query.indexOf("id="); 
@@ -52,32 +31,50 @@
     return null;
   }
 
-  // event listeners
+  function hideAllProjects() {
+    for (var i = 0; i < allProjects.length; i++) {
+      allProjects[i].style.display = "none";
+    }
+  }
+
+  function showProject(id) {
+    if (id && projects[id]) {
+      var p = document.querySelector(projects[id]);
+      if (p) {
+        p.style.display = "block";
+        
+              runAnimations();
+      }
+    } else {
+      console.log("No valid project selected");
+    }
+  }
+
+  function runAnimations() {
+    gsap.registerPlugin(SplitText, ScrollTrigger);
+    let split = new SplitText(".split", { type: "words, chars" });
+
+    gsap.from(split.chars, {
+      y: 100,
+      autoAlpha: 0,
+      stagger: 0.03,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".split",
+        start: "top 80%"
+      }
+    });
+  }
+
+  // Event Listeners
   hamburgerButton.addEventListener("click", openMenu);
   closeButton.addEventListener("click", closeMenu);
 
-  // project selection
   hideAllProjects();
-  showProject(getProjectId());
-
-
   
-  gsap.registerPlugin(SplitText, ScrollTrigger);
-
-  // split all elements with class "split"
-  let split = new SplitText(".split", { type: "words, chars" });
-
-  // animate characters on scroll
-  gsap.from(split.chars, {
-    y: 100,
-    autoAlpha: 0,
-    stagger: 0.03,
-    ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".split",
-      start: "top 80%"
-    }
-  });
+  // This turns "2" into "project2" to match 'projects' id keys
+  var rawId = getProjectId();
+  showProject("project" + rawId);
 
 })();
 

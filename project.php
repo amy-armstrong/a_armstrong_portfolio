@@ -2,10 +2,12 @@
 require_once 'includes/database.php';
 $connection = getConnection();
 
+
 $projectId = $_GET['id'] ?? null;
 $stmt = $connection->prepare("SELECT * FROM projects WHERE id = ? AND is_deleted = 0");
 $stmt->execute([$projectId]);
 $project = $stmt->fetch(PDO::FETCH_ASSOC);
+//echo "<pre>"; var_dump($project); echo "</pre>";
 ?> 
 
 <!DOCTYPE html>
@@ -44,8 +46,8 @@ $project = $stmt->fetch(PDO::FETCH_ASSOC);
     </div>
 
     <main>
-        <section class="project-detail">
-            <h2 class="project-title split"><?= $project['title']; ?></h2>
+    <section class="project-detail" id="project-<?= $project['id']; ?>">            
+        <h2 class="project-title split"><?= $project['title']; ?></h2>
 
             <picture>
                 <source media="(min-width: 768px)" srcset="images/<?= $project['image_desktop']; ?>">
@@ -117,12 +119,11 @@ $project = $stmt->fetch(PDO::FETCH_ASSOC);
             <p>© 2025 AMY ARMSTRONG</p>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/TextPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrambleTextPlugin.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> 
 </body>
 </html>
