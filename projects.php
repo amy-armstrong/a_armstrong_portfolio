@@ -23,7 +23,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <ul>
             <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
             <li><a href="about.html">About Me</a></li>
-            <li><a href="project.php">Projects</a></li>
+            <li><a href="projects.php">Projects</a></li>
             <li><a href="contact.php">Contact</a></li>
           </ul>
     </nav>
@@ -36,7 +36,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <ul>
             <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
             <li><a href="about.html">About Me</a></li>
-            <li><a href="project.php">Projects</a></li>
+            <li><a href="projects.php">Projects</a></li>
             <li><a href="contact.php">Contact</a></li>
           </ul>
     </nav>
@@ -77,7 +77,7 @@ $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h3 class="hidden">nav</h3>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="project.php">Projects</a></li>
+            <li><a href="projects.php">Projects</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.php">Contact</a></li>
           </ul>

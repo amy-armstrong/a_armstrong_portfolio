@@ -40,7 +40,7 @@ if (isset($_POST['create'])) {
     <div class="dashboard">
         <div class="create-form" style="max-width: 800px; margin: 0 auto; padding: 20px;">
             <h2>Add New Portfolio Project</h2>
-            <form action="admin_add.php" method="post">
+            <form action="admin_create.php" method="post">
                 <div class="form-field">
                     <label>Project Title</label>
                     <input type="text" name="title" placeholder="e.g., ZIMA" required>
@@ -80,7 +80,7 @@ if (isset($_POST['create'])) {
                 
                 <div style="margin-top: 20px;">
                     <input type="submit" name="create" value="Create Project" class="btn">
-                    <a href="projects.php">Cancel</a>
+                    <a href="admin.php">Cancel</a>
                 </div>
             </form>
         </div>
