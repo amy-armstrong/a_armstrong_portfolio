@@ -4,23 +4,94 @@
 header {
   @include abs.flex(row, space-between, center);
   padding: 20px 40px;
-  background: rgb(222, 180, 220);
-  border-bottom: 1px solid abs.$color-light-gray;
-  position: sticky;
+  /* background: rgb(222, 180, 220);  <-- Remove or comment this out */
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); // Made subtle
+  position: absolute; // Changed from sticky to sit OVER the hero
+  width: 100%;
   top: 0;
   z-index: 30;
 
-.logo {
-    display: flex; // Changed from 'hidden' to 'flex'
+  .logo {
+    display: flex;
     align-items: center;
     
     svg, img {
-      // Use width to force the size, max-width to keep it responsive
-      width: 5rem; 
-      height: auto; // Maintains aspect ratio
+      width: 4rem; // Adjusted size for a cleaner look
+      height: auto;
       display: block; 
+      // filter: brightness(0) invert(1); // Use this if your logo is black and you want it white
     }
   }
+
+  .hero {
+  min-height: 100vh; // Full screen height
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  
+  // The "Kenny Bruins" Gradient Look
+  background: radial-gradient(circle at 20% 30%, #b8c1ec, transparent 50%),
+              radial-gradient(circle at 80% 70%, #a2a9ec, transparent 50%),
+              #8e94d1; 
+
+  .hero-content {
+    max-width: 900px;
+    padding: 0 20px;
+
+    .pre-title {
+      font-size: 0.9rem;
+      letter-spacing: 4px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+   img {
+    width: 120px;          // Adjust this number to change the size
+    height: 120px;         // Keep height same as width for a perfect circle
+    object-fit: cover;     // Prevents the photo from stretching
+    border-radius: 50%;    // Makes the image a circle
+    margin-bottom: 1.5rem; // Adds space between the photo and the title
+    border: 3px solid rgba(255, 255, 255, 0.2); // Optional: subtle border like the example
+    display: inline-block;
+  }
+    h1 {
+      font-size: clamp(3rem, 10vw, 6.5rem); // Makes text massive but responsive
+      font-weight: 900; // Extra Bold
+      line-height: 0.85;
+      margin-bottom: 2rem;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+
+    .description {
+      font-size: 1.1rem;
+      max-width: 550px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 2px; // Sharp modern corners
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
 
   .desktop-nav ul {
     @include abs.flex(row, flex-start, center, 35px);
@@ -30,7 +101,7 @@ header {
       font-size: 0.95rem;
       font-weight: 500;
       opacity: 0.85;
-      color: rgb(251, 251, 251);
+      color: rgb(0, 0, 0);
       @include abs.transition(opacity, 0.2s);
 
       &:hover {
