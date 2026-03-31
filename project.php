@@ -20,8 +20,9 @@ $project = $stmt->fetch(PDO::FETCH_ASSOC);
 </head>
 <body>
     <header>
-        <h1 class="logo hidden">AA</h1>
-        <img src="images/AA-logo.svg" alt="Logo">
+        <a href="/" class="logo">
+    <img src="images/AA-logo.svg" alt="Logo">
+  </a>
         <nav class="desktop-nav">
             <ul>
                 <li><a href="index.html">DESIGNER & DEVELOPER</a></li>

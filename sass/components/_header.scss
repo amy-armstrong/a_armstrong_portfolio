@@ -10,14 +10,15 @@ header {
   top: 0;
   z-index: 30;
 
-  .logo {
-    display: hidden;
+.logo {
+    display: flex; // Changed from 'hidden' to 'flex'
     align-items: center;
-  
+    
     svg, img {
-      height: 30px !important; 
-      width: auto !important;  
-      max-width: 150px;        
+      // Use width to force the size, max-width to keep it responsive
+      width: 5rem; 
+      height: auto; // Maintains aspect ratio
+      display: block; 
     }
   }
 
