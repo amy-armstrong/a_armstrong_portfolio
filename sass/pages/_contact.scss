@@ -75,16 +75,14 @@
       input,
       textarea {
         width: 100%;
-        border: 1px solid abs.$color-light-gray;
+        //border: 1px solid abs.$color-light-gray;
         padding: 14px 16px;
         border-radius: 12px;
         font-size: 0.95rem;
         outline: none;
         @include abs.transition(border,0.2s);
 
-        &:focus {
-          border-color: abs.$color-black;
-        }
+   
       }
 
       textarea {
@@ -94,8 +92,6 @@
     }
 
     .submit-btn {
-      background: abs.$color-black;
-      color: abs.$color-white;
       padding: 14px 22px;
       border-radius: 12px;
       font-weight: 600;

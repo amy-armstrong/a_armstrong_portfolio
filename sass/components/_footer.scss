@@ -1,40 +1,99 @@
-footer {
-  margin-top: 100px;
-  padding: 40px 40px;
-  background: rgb(222, 180, 220);
-  width: 100%;
+@use "../abstracts" as abs;
 
+footer {
+  // Matching Header Glassmorphism
+  background: rgba(190, 174, 236, 0.515); 
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 60px 40px;
+  color: #fff;
+  
+  // Layout matching the "spaced out" header feel
+  @include abs.flex(row, space-between, flex-start);
+  flex-wrap: wrap; 
+  gap: 40px;
 
   .footer-logo {
-    text-align: left; 
     img {
-      max-width: 80px; 
+      width: 3.5rem; // Matches your header logo size
       height: auto;
-      display: inline-block;
-      margin-bottom: 15px;
-    }
+      display: block;
+      opacity: 0.9;
+      @include abs.transition(opacity, 0.3s);
 
-    h2 {
-      display: none; 
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
-  .footer-nav ul, 
-  .footer-social ul { 
-    list-style: none; 
-    color: white;
-    text-align: right;
-    
-    li { margin-bottom: 10px; } 
+  // Styling for both Nav and Social lists
+  .footer-nav, .footer-social {
+    ul {
+      list-style: none;
+      @include abs.flex(column, flex-start, flex-start, 12px);
+
+      li a {
+        font-family: abs.$font-primary;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #ffffff;
+        text-decoration: none;
+        opacity: 0.6;
+        letter-spacing: 1px;
+        @include abs.transition(all, 0.3s);
+
+        &:hover {
+          opacity: 1;
+          padding-left: 5px; // Subtle "nudge" effect on hover
+          color: #233ec2;    // Your brand purple accent
+        }
+      }
+    }
   }
 
   .footer-bottom {
-    grid-column: 1 / -1;
-    text-align: center;
+    flex-basis: 100%; // Forces copyright to its own line at the bottom
+    border-top: 1px solid rgba(108, 45, 45, 0.05);
     padding-top: 30px;
-    font-size: 1.5rem;
-    opacity: 0.6;
-    color: white;
+    margin-top: 20px;
+    text-align: center;
+
+    p {
+      font-size: 0.75rem;
+      opacity: 0.4;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+  }
+
+  // Accessibility: Hide the <h2> titles visually but keep them for screen readers
+  .hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+}
+
+// Mobile Responsive: Stack sections vertically
+@include abs.respond(md) {
+  footer {
+    @include abs.flex(column, center, center, 40px);
+    text-align: center;
+
+    .footer-nav ul, .footer-social ul {
+      align-items: center;
+    }
+
+    .footer-logo {
+      order: -1; // Keeps logo at top
+    }
   }
 }
 

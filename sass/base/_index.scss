@@ -1,8 +1,5 @@
 @use "typography";
 @use "../abstracts/index" as *;
-
-
-
 @use "../abstracts" as abs;
 
 // RESET + BASE
@@ -13,10 +10,13 @@
 }
 
 body {
-  font-family: abs.$font-primary;
-  background-color: abs.$color-white;
-  color: abs.$color-black;
-  line-height: 1.6;
+  background-color: $color-deep-dark;
+  color: $color-text-main;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; // Added for better readability on descriptions
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -27,21 +27,36 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+  @include abs.transition(opacity, 0.3s); // Smooth hover for all links
 }
 
+// ACCESSIBILITY UTILITY
+// Use this instead of display:none for your "hidden" titles
 .hidden {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; 
+  border: 0;
 }
 
 // TYPOGRAPHY
-h1,h2,h3,h4,h5,h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: abs.$font-secondary;
   font-weight: 700;
+  margin-top: 0;
 }
 
 p {
   font-family: abs.$font-primary;
   font-weight: 400;
+  opacity: 0.9; // Softens the pure white text slightly for better UX
 }
+
+
 
   

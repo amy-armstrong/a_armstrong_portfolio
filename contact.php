@@ -76,8 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <header>
-    <h1 class="logo hidden">AA</h1>
+    <a href="/" class="logo">
     <img src="images/AA-logo.svg" alt="Logo">
+  </a>
     <nav class="desktop-nav">
         <ul>
             <li><a href="index.html">DESIGNER & DEVELOPER</a></li>

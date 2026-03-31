@@ -1,48 +1,103 @@
 @use "../abstracts" as abs;
 
 .hero {
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
   padding: 0 40px;
-  @include abs.flex(column, flex-start, center);
 
-  .hero-banner {
-    font-family: abs.$font-secondary;
-    font-size: 4rem;
-    font-weight: 700;
-    letter-spacing: -2px;
-    color: rgb(58, 58, 58);
+  // The Mesh Gradient Background
+  background: radial-gradient(circle at 15% 25%, rgba(18, 46, 185, 0.8), transparent 45%),
+              radial-gradient(circle at 85% 75%, rgba(23, 5, 70, 0.8), transparent 45%),
+              radial-gradient(circle at 50% 50%, rgb(137, 59, 107), #8e94d1);
+  background-size: cover;
+
+  .hero-content {
+    max-width: 900px;
+    margin-top: 80px; // Spacing for the absolute header
+    @include abs.flex(column, center, center);
+
+    .pre-title {
+      font-family: abs.$font-primary;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    // Your resized profile image
+    img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-family: abs.$font-secondary; // Using your secondary font
+      font-size: clamp(3rem, 10vw, 6.5rem);
+      font-weight: 900; 
+      line-height: 0.85;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: #fff; // Overriding the dark gray from your previous version
+    }
+
+    .description {
+      font-family: abs.$font-primary;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      opacity: 0.85;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      padding: 18px 45px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      @include abs.transition(all, 0.3s);
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+    }
   }
 
-  p {
-    font-family: abs.$font-primary;
-    font-size: 1.2rem;
-    opacity: 0.7;
-  }
-
-  @include abs.respond(md) {
-    .hero-banner { font-size: 2.8rem; }
-  }
-
+  // Handling the video player from your old code
+  // If you still want it, keep this. If not, you can delete it.
   .video-player {
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px auto 0;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  
-    video {
-      width: 100%;
-      height: auto;
-      border-radius: inherit;
-      outline: none;
+    display: none; // Hidden by default for this new style
+  }
+}
+
+// Tablet and Mobile Adjustments
+@include abs.respond(md) {
+  .hero {
+    .hero-content {
+      h1 { font-size: 3.5rem; letter-spacing: -1px; }
+      img { width: 110px; height: 110px; }
+      .description { font-size: 1rem; }
     }
   }
-  
-  @media (max-width: 768px) {
-    .video-player {
-      display: none;
-    }
-  }
-  
 }
 
   
