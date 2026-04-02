@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $input) {
             <li><a href="index.html">ARMSTRNG</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="projects.php">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
     <button id="hamburger">&#9776;</button>
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $input) {
             <li><a href="index.html">ARMSTRNG</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="projects.php">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.php">Contact</a></li>
         </ul>
     </nav>
 </div>
