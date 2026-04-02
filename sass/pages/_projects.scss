@@ -1,127 +1,143 @@
-@forward 'home';
-@forward 'contact';
-@forward 'projects';
-
 @use "../abstracts" as abs;
 
 .projects {
   padding: 100px 40px;
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
-}
+  color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
 
   h2 {
     font-family: abs.$font-secondary;
-    font-size: 2.2rem;
-    margin-bottom: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    text-align: center;
+    color: #b8c1ec; // Lavender label
+    opacity: 0.8;
   }
 
   .project-list {
-    @include abs.grid(repeat(auto-fit, minmax(280px, 1fr)), 25px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 80px 40px;
   }
 
-    .project-card { 
-      background: #fff; 
-      padding: 20px; 
-      border-radius: 12px; 
-      text-align: left; 
+  .project-card {
+    background: transparent;
+    // Subtle purple-tinted border
+    border-top: 1px solid rgba(184, 193, 236, 0.2); 
+    padding: 30px 0;
+    text-align: left;
+    @include abs.transition(all, 0.4s ease);
 
-    .view-more { 
-      display: inline-block; 
-      margin-top: 12px; 
-      font-weight: 600; 
-      color: #2b68ff; 
-      text-decoration: underline; 
-    } 
-
-      a {
-        display: block;
-        color: inherit;
-        text-decoration: none;
-
+    &:hover {
+      border-top-color: #e2e8f0; // Lights up on hover
+      
+      .image-wrap {
+        box-shadow: 0 0 30px rgba(184, 193, 236, 0.15); // Purple glow
         img {
-          width: 100%;
-          height: 180px;
-          object-fit: cover;
-          @include abs.transition(all, 0.25s);
-        }
-
-        h3 {
-          margin: 15px 0 10px;
-          font-family: abs.$font-secondary;
-        }
-
-        p {
-          font-family: abs.$font-primary;
-          font-size: 0.95rem;
-          opacity: 0.7;
-          padding: 0 15px 15px;
+          transform: scale(1.05);
+          filter: saturate(1.2); // Makes colors pop
         }
       }
 
-    padding: 100px 40px; 
-    max-width: 1100px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-  
-    h2.project-id {
-      font-family: abs.$font-secondary;
-      font-size: 2.2rem;
-      margin-bottom: 50px;
+      h3 {
+        color: #eebef1; // Brighter pinky-purple
+        letter-spacing: 1px;
+      }
     }
-  
-    .project-card {
-      padding: 25px;
-      border: 1px solid #eee;
-      @include abs.rounded(14px);
-      @include abs.transition(all, 0.25s);
-  
-      &:hover {
-        transform: translateY(-5px);
-        border-color: #ccc;
-      }
-  
+
+    .image-wrap {
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      background: #161621; // Deep purple-tinted black
+      border: 1px solid rgba(184, 193, 236, 0.05);
+      @include abs.transition(all, 0.4s ease);
+
       img {
         width: 100%;
-        @include abs.rounded(12px);
-        margin-bottom: 15px;
+        height: 320px;
+        object-fit: cover;
+        display: block;
+        opacity: 0.9;
+        @include abs.transition(all, 0.8s cubic-bezier(0.16, 1, 0.3, 1));
       }
-  
-      h3 {
-        font-family: abs.$font-secondary;
-        margin-bottom: 10px;
+    }
+
+    h3 {
+      font-family: abs.$font-secondary;
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #b8c1ec; // Soft lavender
+      @include abs.transition(all, 0.3s);
+    }
+
+    p {
+      font-family: abs.$font-primary;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #d1d1e9; // Muted blue-purple text
+      opacity: 0.7;
+      margin-bottom: 25px;
+    }
+
+    .view-more {
+      display: inline-flex;
+      align-items: center;
+      font-family: abs.$font-secondary;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #eebef1; 
+      text-decoration: none;
+      @include abs.transition(all, 0.3s);
+
+      // Custom Purple Underline
+      &::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: #b8c1ec;
+        margin-left: 15px;
+        @include abs.transition(width, 0.3s);
       }
-  
-      p {
-        font-family: abs.$font-primary;
-        font-size: 0.95rem;
-        opacity: 0.8;
-        margin-bottom: 15px;
-      }
-  
-      .view-more {
-        display: inline-block;
-        background: white;
-        color: black;
-        padding: 10px 18px;
-        border-radius: 4px;
-        font-size: 0.9rem;
-        @include abs.transition(all, 0.2s);
-  
-        &:hover {
-          opacity: 0.7;
+
+      &:hover {
+        color: #ffffff;
+        &::after {
+          width: 60px;
+          background: #eebef1;
         }
       }
     }
   }
-  
+}
 
-  @include abs.respond(md) {
+@include abs.respond(md) {
+  .projects {
+    padding: 60px 20px;
     .project-list {
-      grid-template-columns: 1fr 1fr; // 2 per row on tablet
+      grid-template-columns: 1fr; 
+      gap: 60px;
     }
   }
+}
+
+// Tablet and Mobile
+@include abs.respond(md) {
+  .projects {
+    padding: 60px 20px;
+    .project-list {
+      grid-template-columns: 1fr; // Single column on mobile for impact
+      gap: 50px;
+    }
+  }
+}
 

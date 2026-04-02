@@ -1,111 +1,142 @@
 @use "../abstracts" as abs;
 
 .contact-page {
-  padding: 80px 0;
-}
+  background: radial-gradient(circle at 20% 30%, #241b35 0%, #161621 100%);
+  min-height: 100vh;
+  color: #fff;
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  .grid-con {
+    width: 100%;
+    max-width: 1000px;
+  }
 
-.contact-intro {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px 10px 20px;
-  
-    .intro-card {
-      position: relative;
-      text-align: center;
-      max-width: 600px;
-      padding: 60px 40px;
-  
-  
-      h2,
-      p {
-        position: relative;
-        z-index: 2; // keep text above cloud
-        color: white;
-      }
-  
-      img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 110%;        
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        z-index: 1;         // behind the text
-        pointer-events: none;
-      }
+  .contact-header {
+    text-align: left; // Shifted to left for a more modern asymmetric look
+    margin-bottom: 60px;
+
+    .pre-title {
+      font-family: abs.$font-secondary;
+      letter-spacing: 4px;
+      color: #eebef1; 
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1;
+      margin: 0;
+      background: linear-gradient(to right, #fff, #b8c1ec);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
-  
+}
 
-.contact-form-area {
-  max-width: 800px;
-  margin: 0 auto 80px auto;
-  padding-top: 150px;
+.modern-form {
+  background: rgba(106, 35, 83, 0.03); // The "Glass" base
+  backdrop-filter: blur(15px); // Frosted effect
+  border: 1px solid rgba(184, 193, 236, 0.1);
+  padding: 60px;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
 
-  h3 {
-    font-family: abs.$font-secondary;
-    font-size: 1.2rem;
-    margin-bottom: 35px;
-    text-align: center;
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
   }
 
-  .contact-form {
+  .input-group {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 8px;
 
-    .row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+    label {
+      font-family: abs.$font-secondary;
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      color: #b8c1ec;
+      text-transform: uppercase;
+      padding-left: 5px;
     }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      label {
-        font-size: 0.85rem;
-        font-weight: 600;
-        opacity: 0.8;
-      }
-
-      input,
-      textarea {
-        width: 100%;
-        //border: 1px solid abs.$color-light-gray;
-        padding: 14px 16px;
-        border-radius: 12px;
-        font-size: 0.95rem;
-        outline: none;
-        @include abs.transition(border,0.2s);
-
-   
-      }
-
-      textarea {
-        height: 160px;
-        resize: none;
-      }
-    }
-
-    .submit-btn {
-      padding: 14px 22px;
+    input, textarea {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(184, 193, 236, 0.1);
       border-radius: 12px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
-      width: fit-content;
-      @include abs.transition(background,0.2s);
+      color: #fff;
+      padding: 15px 20px;
+      font-size: 1rem;
+      font-family: abs.$font-primary;
+      @include abs.transition(all, 0.3s);
 
+      &:focus {
+        outline: none;
+        background: rgba(184, 193, 236, 0.05);
+        border-color: #eebef1;
+        box-shadow: 0 0 15px rgba(238, 190, 241, 0.1);
+      }
+    }
+  }
 
+  .submit-btn {
+    margin-top: 20px;
+    background: #b8c1ec;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    @include abs.transition(all, 0.3s);
+
+    .btn-text {
+      color: #161621;
+      font-family: abs.$font-secondary;
+      font-weight: 800;
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    &:hover {
+      background: #eebef1;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(238, 190, 241, 0.2);
+    }
+
+    &.buttonCircle {
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      border-radius: 50%;
+      align-self: center;
     }
   }
 }
 
+// Mobile Overrides
+@include abs.respond(md) {
+  .contact-page {
+    padding: 80px 20px;
+    
+    .modern-form {
+      padding: 30px;
+      .form-row { grid-template-columns: 1fr; }
+    }
+  }
+}
 
 @media (max-width: 768px) {
     .contact-intro .intro-card {

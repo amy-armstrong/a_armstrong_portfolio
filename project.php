@@ -25,7 +25,7 @@ $project = $stmt->fetch(PDO::FETCH_ASSOC);
   </a>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
+                <li><a href="index.html">ARMSTRNG</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.php">Projects</a></li>
                 <li><a href="contact.php">Contact</a></li>
@@ -38,7 +38,7 @@ $project = $stmt->fetch(PDO::FETCH_ASSOC);
         <button id="close">&times;</button>
         <nav>
             <ul>
-                <li><a href="index.html">DESIGNER & DEVELOPER</a></li>
+                <li><a href="index.html">ARMSTRNG</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="projects.php">Projects</a></li>
                 <li><a href="contact.php">Contact</a></li>
@@ -87,8 +87,7 @@ $project = $stmt->fetch(PDO::FETCH_ASSOC);
                 <p><?= $project['objective']; ?></p>
             </section>
             
-            <a href="projects.php" class="view-more">Back to All Projects</a>
-        </section>
+        <a href="projects.php" class="back-link">← Back to Projects</a>        </section>
     </main>
 
     <footer>
