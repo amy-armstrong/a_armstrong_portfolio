@@ -1,74 +1,131 @@
 @use "../abstracts" as abs;
 
-.project-detail {
-  max-width: 750px;          
-  margin: 120px auto;
-  padding: 0 30px;
-  text-align: left;
+.project-detail-body {
+  background: radial-gradient(circle at 0% 0%, #1a1b2e 0%, #161621 100%);
+  min-height: 100vh;
+  color: #fff;
 }
 
+.project-detail {
+  max-width: 1000px; // Wider for a more cinematic feel         
+  margin: 0 auto;
+  padding: 120px 40px;
+  text-align: left;
 
-.project-title {
-  font-family: abs.$font-secondary;  
-  font-size: 2.8rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 40px;
+  .back-link {
+    font-family: abs.$font-secondary;
+    color: #b8c1ec;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 40px;
+    @include abs.transition(all, 0.3s);
+
+    &:hover {
+      color: #fff;
+      transform: translateX(-5px);
+    }
+  }
+}
+
+.project-header {
+  margin-bottom: 60px;
+  
+  .project-title {
+    font-family: abs.$font-secondary;  
+    font-size: clamp(2.5rem, 8vw, 5rem); // Responsive huge text
+    font-weight: 900;
+    line-height: 0.9;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #b8c1ec);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .project-main-image {
   width: 100%;
-  height: 260px;             
-  border-radius: 12px;
+  height: 500px; // Taller for more impact             
+  border-radius: 24px;
   display: block;
-  margin: 0 auto 60px auto;
+  margin-bottom: 60px;
   object-fit: cover;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(184, 193, 236, 0.1);
 }
 
-
-.project-detail h3 {
-  font-family: abs.$font-secondary;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-}
-
-
-.project-detail p {
-  font-family: abs.$font-primary;
-  line-height: 1.7;
-  opacity: 0.85;
-  margin-bottom: 35px;
-}
-
-
+// The spec-sheet grid
 .info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin: 50px 0;
+  gap: 30px;
+  margin: 60px 0;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(184, 193, 236, 0.1);
 }
 
 .info-item {
-  text-align: left;
-
   strong {
     display: block;
     font-family: abs.$font-secondary;
-    font-size: 1rem;
-    margin-bottom: 6px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #eebef1; // Pinky-purple accent
+    margin-bottom: 8px;
   }
 
   span {
     font-family: abs.$font-primary;
-    font-size: 0.95rem;
-    opacity: 0.8;
-    display: block;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    color: #fff;
+    opacity: 0.9;
   }
 }
 
+.project-content {
+  max-width: 800px; // Keep reading lines shorter for UX
+  
+  h3 {
+    font-family: abs.$font-secondary;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #b8c1ec;
+    margin-bottom: 20px;
+    margin-top: 60px;
+  }
+
+  p {
+    font-family: abs.$font-primary;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d1d1e9;
+    opacity: 0.8;
+    margin-bottom: 30px;
+  }
+}
+
+/* --- RESPONSIVE --- */
+@include abs.respond(md) {
+  .project-detail {
+    padding: 80px 20px;
+  }
+
+  .project-main-image {
+    height: 300px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr; // Stack specs on mobile
+    gap: 20px;
+    padding: 30px;
+  }
+}
 
 @media (max-width: 768px) {
   .project-detail {

@@ -1,75 +1,155 @@
 @use "../abstracts" as abs;
 
+/* --- PROJECTS PAGE: DEEP PURPLE EDITION --- */
 .projects {
   padding: 100px 40px;
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
+  // Deep Indigo-Violet gradient for a "Purple" rather than "Black" feel
+  background: radial-gradient(circle at 0% 0%, #1a1b2e 0%, #161621 100%);
+  background-size: 100vw;
+  color: #ffffff;
+  margin: 0 auto;
+  min-height: 100vh;
 
   h2 {
     font-family: abs.$font-secondary;
-    font-size: 2.2rem;
-    margin-bottom: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    text-align: center;
+    color: #b8c1ec; // Soft Lavender Label
+    opacity: 0.8;
   }
 
   .project-list {
-    @include abs.grid(repeat(auto-fit, minmax(300px, 1fr)), 30px);
-    justify-items: center; 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 80px 40px;
   }
 
   .project-card {
-    background: #fff;
-    padding: 25px;
-    border: 1px solid #eee;
-    @include abs.rounded(14px);
-    text-align: center;
-    width: 100%;
-    max-width: 360px; 
-    @include abs.transition(all, 0.25s);
+    background: transparent;
+    // Purple-tinted separator line
+    border-top: 1px solid rgba(184, 193, 236, 0.15); 
+    padding: 40px 0;
+    text-align: left;
+    @include abs.transition(all, 0.4s ease);
 
     &:hover {
-      transform: translateY(-5px);
-      border-color: #ccc;
+      border-top-color: #eebef1; // Glows pinky-purple on hover
+      
+      .image-wrap {
+        box-shadow: 0 10px 40px rgba(184, 193, 236, 0.1);
+        img {
+          transform: scale(1.05);
+          filter: saturate(1.2) brightness(1.1);
+        }
+      }
+
+      h3 {
+        color: #eebef1; 
+        transform: translateX(5px);
+      }
+    }
+
+    .image-wrap {
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      background: #111119; // Darker contrast for the image slot
+      border: 1px solid rgba(184, 193, 236, 0.05);
+      @include abs.transition(all, 0.4s ease);
+
+      img {
+        width: 100%;
+        height: 350px; 
+        object-fit: cover;
+        display: block;
+        opacity: 0.9;
+        filter: grayscale(15%); // Moody starting point
+        @include abs.transition(all, 0.8s cubic-bezier(0.16, 1, 0.3, 1));
+      }
     }
 
     h3 {
       font-family: abs.$font-secondary;
-      margin-bottom: 20px;
-      font-size: 1.4rem;
-      text-align: center;
-    }
-
-    img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      @include abs.rounded(12px);
-      margin-bottom: 15px;
-      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      color: #b8c1ec; // Lavender Title
+      letter-spacing: -0.5px;
+      @include abs.transition(all, 0.3s ease);
     }
 
     p {
       font-family: abs.$font-primary;
-      font-size: 0.95rem;
-      opacity: 0.8;
-      margin-bottom: 15px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #d1d1e9; // Soft blue-tinted gray text
+      opacity: 0.7;
+      margin-bottom: 30px;
+      max-width: 90%;
     }
 
     .view-more {
-      display: inline-block;
-      background: #fff;
-      padding: 10px 18px;
-      border-radius: 6px;
-      border: 1px solid #000;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #000;
+      display: inline-flex;
+      align-items: center;
+      font-family: abs.$font-secondary;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #eebef1; // Electric Purple Link
       text-decoration: none;
-      @include abs.transition(all, 0.2s);
+      @include abs.transition(all, 0.3s);
+
+      // Custom animated underline "Tail"
+      &::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: #b8c1ec;
+        margin-left: 15px;
+        @include abs.transition(all, 0.3s ease);
+      }
 
       &:hover {
-        opacity: 0.7;
+        color: #ffffff;
+        letter-spacing: 3px;
+        &::after {
+          width: 50px;
+          background: #eebef1;
+        }
       }
+    }
+  }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@include abs.respond(md) {
+  .projects {
+    padding: 60px 20px;
+    
+    .project-list {
+      grid-template-columns: 1fr; 
+      gap: 60px;
+    }
+
+    .project-card h3 {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@include abs.respond(md) {
+  .projects {
+    padding: 60px 20px;
+    .project-list {
+      grid-template-columns: 1fr; 
+      gap: 60px;
     }
   }
 }
